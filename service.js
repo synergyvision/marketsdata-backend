@@ -145,7 +145,6 @@ function saveSectors(sectors) {
 }
 
 service.all = all;
-service.cities = cities;
 module.exports = service;
 
 
