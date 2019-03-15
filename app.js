@@ -21,9 +21,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use('/user', require('./routes/admin'));
 
 
-var j = schedule.scheduleJob('*/2 * * * *', function () {
-    service.all().then(() =>{ console.log('All worked'); });
-});
+// var j = schedule.scheduleJob('*/2 * * * *', function () {
+//     service.all().then(() =>{ console.log('All worked'); });
+// });
 
 var j = schedule.scheduleJob('00 00 12 * * 0-6', function () {
     service.all().then(() =>{ console.log('All worked'); });
