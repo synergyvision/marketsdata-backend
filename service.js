@@ -68,7 +68,7 @@ async function getCompanies(urls) {
                     parseFloat(companies[company].stats.ttmEPS.toFixed(2)): 0;
                     let peRatio = typeof(companies[company].quote.peRatio) == 'number' ? 
                     parseFloat(companies[company].quote.peRatio.toFixed(2)) : 0;
-                    if(sectors.indexOf(sector) == -1 && sector != "-")
+                    if(sectors.indexOf(sector) == -1 && sector != "-" && sector != 'Financial Services')
                         sectors.push(sector);
                     if((exchange == 'new york stock exchange' || 
                         exchange == 'nasdaq global market' ||
@@ -90,6 +90,30 @@ async function getCompanies(urls) {
                             com.returnOnAssets = companies[company].stats.returnOnAssets;
                             com.returnOnEquity = companies[company].stats.returnOnEquity;
                             com.ttmEps = ttmEps;
+                            com.beta = companies[company].stats.beta;
+                            com.week52high = companies[company].stats.week52high;
+                            com.week52low = companies[company].stats.week52low;
+                            com.week52change = companies[company].stats.week52change;
+                            com.dividendRate = companies[company].stats.dividendRate;
+                            com.dividendYield = companies[company].stats.dividendYield;
+                            com.latestEPS = companies[company].stats.latestEPS;
+                            com.sharesOutstanding = companies[company].stats.sharesOutstanding;
+                            com.float = companies[company].stats.float;
+                            com.consensusEPS = companies[company].stats.consensusEPS;
+                            com.numberOfEstimates = companies[company].stats.numberOfEstimates;
+                            com.peRatioHigh = companies[company].stats.peRatioHigh;
+                            com.peRatioLow = companies[company].stats.peRatioLow;
+                            com.profitMargin = companies[company].stats.profitMargin;
+                            com.priceToSales = companies[company].stats.priceToSales;
+                            com.priceToBook = companies[company].stats.priceToBook;
+                            com.day200MovingAvg = companies[company].stats.day200MovingAvg;
+                            com.day50MovingAvg = companies[company].stats.day50MovingAvg;
+                            com.institutionPercent = companies[company].stats.institutionPercent;
+                            com.insiderPercent = companies[company].stats.insiderPercent;
+                            com.year5ChangePercent = companies[company].stats.year5ChangePercent;
+                            com.year2ChangePercent = companies[company].stats.year2ChangePercent;
+                            com.year1ChangePercent = companies[company].stats.year1ChangePercent;
+                            com.ytdChangePercent = companies[company].stats.ytdChangePercent; 
                             finalCompanies.push(com);
                             com = {};
                     }
