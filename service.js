@@ -90,30 +90,58 @@ async function getCompanies(urls) {
                             com.returnOnAssets = companies[company].stats.returnOnAssets;
                             com.returnOnEquity = companies[company].stats.returnOnEquity;
                             com.ttmEps = ttmEps;
-                            com.beta = companies[company].stats.beta;
-                            com.week52high = companies[company].stats.week52high;
-                            com.week52low = companies[company].stats.week52low;
-                            com.week52change = companies[company].stats.week52change;
-                            com.dividendRate = companies[company].stats.dividendRate;
-                            com.dividendYield = companies[company].stats.dividendYield;
-                            com.latestEPS = companies[company].stats.latestEPS;
-                            com.sharesOutstanding = companies[company].stats.sharesOutstanding;
-                            com.float = companies[company].stats.float;
-                            com.consensusEPS = companies[company].stats.consensusEPS;
-                            com.numberOfEstimates = companies[company].stats.numberOfEstimates;
-                            com.peRatioHigh = companies[company].stats.peRatioHigh;
-                            com.peRatioLow = companies[company].stats.peRatioLow;
-                            com.profitMargin = companies[company].stats.profitMargin;
-                            com.priceToSales = companies[company].stats.priceToSales;
-                            com.priceToBook = companies[company].stats.priceToBook;
-                            com.day200MovingAvg = companies[company].stats.day200MovingAvg;
-                            com.day50MovingAvg = companies[company].stats.day50MovingAvg;
-                            com.institutionPercent = companies[company].stats.institutionPercent;
-                            com.insiderPercent = companies[company].stats.insiderPercent;
-                            com.year5ChangePercent = companies[company].stats.year5ChangePercent;
-                            com.year2ChangePercent = companies[company].stats.year2ChangePercent;
-                            com.year1ChangePercent = companies[company].stats.year1ChangePercent;
-                            com.ytdChangePercent = companies[company].stats.ytdChangePercent; 
+                            com.beta = typeof(companies[company].stats.beta)  == 'number' ? 
+                            parseFloat(companies[company].stats.beta.toFixed(3)): 0;
+                            com.week52high =  typeof(companies[company].stats.week52high)  == 'number' ? 
+                            companies[company].stats.week52high: 0; 
+                            com.week52low = typeof(companies[company].stats.week52low)  == 'number' ? 
+                            companies[company].stats.week52low: 0;
+                            com.week52change = typeof(companies[company].stats.week52change)  == 'number' ? 
+                            parseFloat(companies[company].stats.week52change.toFixed(3)): 0;
+                            com.dividendRate = typeof(companies[company].stats.dividendRate)  == 'number' ? 
+                            parseFloat(companies[company].stats.dividendRate.toFixed(2)): 0;
+                            com.dividendYield = typeof(companies[company].stats.dividendYield)  == 'number' ? 
+                            parseFloat(companies[company].stats.dividendYield.toFixed(3)): 0;
+                            com.latestEPS = typeof(companies[company].stats.latestEPS)  == 'number' ? 
+                            parseFloat(companies[company].stats.latestEPS.toFixed(3)): 0;
+                            com.sharesOutstanding = typeof(companies[company].stats.sharesOutstanding)  == 'number' ? 
+                            companies[company].stats.sharesOutstanding: 0;
+                            com.float = typeof(companies[company].stats.float)  == 'number' ? 
+                            companies[company].stats.float: 0;
+                            com.consensusEPS = typeof(companies[company].stats.consensusEPS)  == 'number' ? 
+                            companies[company].stats.consensusEPS: 0;
+                            com.numberOfEstimates = typeof(companies[company].stats.numberOfEstimates) == 'number' ?
+                            companies[company].stats.numberOfEstimates: 0;
+                            com.peRatioHigh = typeof(companies[company].stats.peRatioHigh)  == 'number' ? 
+                            companies[company].stats.peRatioHigh: 0;
+                            com.peRatioLow = typeof(companies[company].stats.peRatioLow)  == 'number' ? 
+                            companies[company].stats.peRatioLow: 0;
+                            com.profitMargin = typeof(companies[company].stats.profitMargin)  == 'number' ? 
+                            companies[company].stats.profitMargin: 0;
+                            com.priceToSales = typeof(companies[company].stats.priceToSales)  == 'number' ? 
+                            parseFloat(companies[company].stats.priceToSales.toFixed(3)): 0;
+                            com.priceToBook = typeof(companies[company].stats.priceToBook)  == 'number' ? 
+                            parseFloat(companies[company].stats.priceToBook.toFixed(3)): 0;
+                            com.day200MovingAvg = typeof(companies[company].stats.day200MovingAvg)  == 'number' ? 
+                            parseFloat(companies[company].stats.day200MovingAvg.toFixed(3)): 0;
+                            com.day50MovingAvg = typeof(companies[company].stats.day50MovingAvg)  == 'number' ? 
+                            parseFloat(companies[company].stats.day50MovingAvg.toFixed(3)): 0;
+                            com.institutionPercent = typeof(companies[company].stats.institutionPercent)  == 'number' ? 
+                            companies[company].stats.institutionPercent: 0;
+                            com.insiderPercent = typeof(companies[company].stats.insiderPercent)  == 'number' ? 
+                            companies[company].stats.insiderPercent: 0;
+                            com.year5ChangePercent = typeof(companies[company].stats.year5ChangePercent)  == 'number' ? 
+                            parseFloat(companies[company].stats.year5ChangePercent.toFixed(3)): 0;
+                            com.year2ChangePercent = typeof(companies[company].stats.year2ChangePercent)  == 'number' ? 
+                            parseFloat(companies[company].stats.year2ChangePercent.toFixed(3)): 0;
+                            com.year1ChangePercent = typeof(companies[company].stats.year1ChangePercent)  == 'number' ? 
+                            parseFloat(companies[company].stats.year1ChangePercent.toFixed(3)): 0;
+                            com.ytdChangePercent = typeof(companies[company].stats.ytdChangePercent)  == 'number' ? 
+                            parseFloat(companies[company].stats.ytdChangePercent.toFixed(3)): 0; 
+                            com.open = companies[company].quote.open;
+                            com.close = companies[company].quote.close;
+                            com.high = companies[company].quote.high;
+                            com.low = companies[company].quote.low;
                             finalCompanies.push(com);
                             com = {};
                     }
