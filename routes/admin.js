@@ -3,8 +3,7 @@ const router = express.Router();
 const admin = require('firebase-admin');
 
 router.post('/', (req, res) => {
-    console.log(req.body);
-    
+   
     admin.auth().createUser({
         email: req.body.email,
         password: req.body.password,
