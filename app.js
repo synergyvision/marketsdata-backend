@@ -10,7 +10,7 @@ app.listen(PORT, () => {
 });
 
 app.use(function(req, res, next) {
-     res.header("Access-Control-Allow-Origin", "https://synergy.vision/marketsdata-admin/");
+     res.header("Access-Control-Allow-Origin", "https://synergy.vision");
      res.header("Access-Control-Allow-Methods", "POST, DELETE");
      res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
      next();
