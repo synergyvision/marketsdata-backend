@@ -20,13 +20,21 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use('/user', require('./routes/admin'));
 
-
-// var j = schedule.scheduleJob('*/2 * * * *', function () {
-//     service.all().then(() =>{ console.log('All worked'); });
-// });
+// schedule.scheduleJob("*/5 * * * *", function() {
+//      var today = new Date();
+//      var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+//      console.log(time)
+//  });
+var today = new Date();
+var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+console.log(time);
 service.all().then(() =>{ console.log('All worked'); });
-var j = schedule.scheduleJob('00 00 12 * * 0-6', function () {
-    service.all().then(() =>{ console.log('All worked'); });
+var j = schedule.scheduleJob('0 12 * * *', function () {
+    service.all().then(() =>{ console.log('All worked'); 
+    var today = new Date();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    console.log(time);
+});
 }); 
 // Se ejecuta todos los dias a las 12 AM
 
