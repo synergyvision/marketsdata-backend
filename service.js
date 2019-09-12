@@ -57,7 +57,7 @@ async function getCompanies(urls) {
         let peRatioTOP = 5;
         let sectors = [];
         try {
-            for(let i = 0; i < 1; i++) {
+            for(let i = 0; i < urls.length; i++) {
                 let companies = await goUrl(urls[i]);
                 
                 for(let company in companies) {
