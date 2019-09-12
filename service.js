@@ -1,7 +1,7 @@
 var rp = require('request-promise');
 var firebase =  require('./firebase');
 var service = {};
-var public_key = 'pk_3588cd80280a48dc882e3d07e83fc7a6';
+var public_key = 'pk_a3908675ec5e43739b64e79eb95d3ba3';
 
 async function getCompanySymbols() {
     try {
@@ -57,7 +57,7 @@ async function getCompanies(urls) {
         let peRatioTOP = 5;
         let sectors = [];
         try {
-            for(let i = 0; i < urls.length; i++) {
+            for(let i = 0; i < 1; i++) {
                 let companies = await goUrl(urls[i]);
                 
                 for(let company in companies) {
