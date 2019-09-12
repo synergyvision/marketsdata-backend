@@ -25,17 +25,20 @@ app.use('/user', require('./routes/admin'));
 //      var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
 //      console.log(time)
 //  });
-// var today = new Date();
-// var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-// console.log(time);
-// service.all().then(() =>{ console.log('All worked'); });
-// var j = schedule.scheduleJob('*/5 * * * *', function () {
-//     service.all().then(() =>{ console.log('All worked'); 
-//     var today = new Date();
-//     var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-//     console.log(time);
-// });
-// }); 
+
+service.all().then(() =>{ 
+     console.log('All worked'); 
+     var today = new Date();
+     var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+     console.log(time);
+});
+var j = schedule.scheduleJob('0 12 * * *', function () {
+    service.all().then(() =>{ console.log('All worked'); 
+    var today = new Date();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    console.log(time);
+});
+}); 
 // Se ejecuta todos los dias a las 12 AM
 
 
