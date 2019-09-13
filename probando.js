@@ -1,0 +1,1 @@
+console.log('Probando aplicacion cada 10 minutos');

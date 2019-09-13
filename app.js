@@ -20,11 +20,12 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use('/user', require('./routes/admin'));
 
-schedule.scheduleJob("*/35 * * * *", function() {
-     var today = new Date();
-     var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-     console.log(time)
- });
+
+// schedule.scheduleJob("*/50 * * * *", function() {
+//      var today = new Date();
+//      var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+//      console.log(time)
+//  });
 
 // service.all().then(() =>{ 
 //      console.log('All worked'); 
