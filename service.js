@@ -1,7 +1,7 @@
 var rp = require('request-promise');
 var firebase =  require('./firebase');
 var service = {};
-var public_key = 'pk_a3908675ec5e43739b64e79eb95d3ba3';
+var public_key = 'pk_afd107a518c14df0a49dfb4d3fdf1c17';
 
 async function getCompanySymbols() {
     try {
